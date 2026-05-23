@@ -636,12 +636,150 @@
 
                 <div class="step-card">
 
-                    <h2>Step 5</h2>
+                    <div class="step-header">
 
-                    <p>
-                        Bank Details Section
-                    </p>
+                        <h2>Bank Account Details</h2>
 
+                        <p>
+                            Please provide your bank account details carefully.
+                        </p>
+
+                    </div>
+
+                    <!-- FORM GRID -->
+                    <div class="form-grid">
+
+                        <!-- BANK NAME -->
+                        <div class="form-group">
+
+                            <label for="bankName">
+                                Bank Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bankName"
+                                name="bankName"
+                                placeholder="Enter bank name"
+                            />
+
+                        </div>
+
+                        <!-- ACCOUNT HOLDER -->
+                        <div class="form-group">
+
+                            <label for="accountHolderName">
+                                Account Holder Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="accountHolderName"
+                                name="accountHolderName"
+                                placeholder="Enter account holder name"
+                            />
+
+                        </div>
+
+                        <!-- ACCOUNT TYPE -->
+                        <div class="form-group">
+
+                            <label for="accountType">
+                                Account Type *
+                            </label>
+
+                            <select
+                                id="accountType"
+                                name="accountType"
+                            >
+                                <option value="">
+                                    Select Account Type
+                                </option>
+
+                                <option value="Savings">
+                                    Savings
+                                </option>
+
+                                <option value="Current">
+                                    Current
+                                </option>
+
+                                <option value="Joint">
+                                    Joint
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- ACCOUNT NUMBER -->
+                        <div class="form-group">
+
+                            <label for="accountNumber">
+                                Account Number *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="accountNumber"
+                                name="accountNumber"
+                                placeholder="Enter account number"
+                            />
+
+                        </div>
+
+                        <!-- IFSC -->
+                        <div class="form-group">
+
+                            <label for="ifscCode">
+                                IFSC Code *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="ifscCode"
+                                name="ifscCode"
+                                placeholder="e.g. SBIN0001234"
+                            />
+
+                        </div>
+
+                    </div>
+
+                    <!-- BANK ADDRESS -->
+                    <div class="form-group">
+
+                        <label for="bankAddress">
+                            Bank Address *
+                        </label>
+
+                        <textarea
+                            id="bankAddress"
+                            name="bankAddress"
+                            rows="4"
+                            placeholder="Enter bank branch address"
+                        ></textarea>
+
+                    </div>
+
+                    <!-- COPY RESPONSE -->
+                    <div class="checkbox-group">
+
+                        <label class="checkbox-option">
+
+                            <input
+                                type="checkbox"
+                                id="sendCopy"
+                                name="sendCopy"
+                            />
+
+                            Send me a copy of my response
+
+                        </label>
+
+                    </div>
+
+                    <!-- BUTTONS -->
                     <div class="button-group">
 
                         <button
@@ -656,7 +794,7 @@
                             type="submit"
                             class="btn btn-submit"
                         >
-                            Submit
+                            Submit Form
                         </button>
 
                     </div>

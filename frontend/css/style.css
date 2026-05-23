@@ -372,3 +372,27 @@ textarea {
     }
 
 }
+
+
+/* ----- Banking Details Page ----- */
+
+/* CHECKBOX GROUP */
+.checkbox-group {
+    margin-top: 20px;
+}
+
+
+/* CHECKBOX OPTION */
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-weight: 500;
+}
+
+
+/* CHECKBOX INPUT */
+.checkbox-option input {
+    width: auto;
+}
