@@ -292,12 +292,88 @@
 
                 <div class="step-card">
 
-                    <h2>Step 2</h2>
+                    <div class="step-header">
 
-                    <p>
-                        Qualification Section
-                    </p>
+                        <h2>Qualification Details</h2>
 
+                        <p>
+                            Please provide your educational qualification details.
+                        </p>
+
+                    </div>
+
+                    <!-- FORM GRID -->
+                    <div class="form-grid">
+
+                        <!-- DEGREE -->
+                        <div class="form-group">
+
+                            <label for="highestDegree">
+                                Highest Degree *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="highestDegree"
+                                name="highestDegree"
+                                placeholder="e.g. B.Tech, MBA"
+                            />
+
+                        </div>
+
+                        <!-- INSTITUTE -->
+                        <div class="form-group">
+
+                            <label for="institutionName">
+                                Institution Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="institutionName"
+                                name="institutionName"
+                                placeholder="Enter institution name"
+                            />
+
+                        </div>
+
+                        <!-- YEAR OF PASSING -->
+                        <div class="form-group">
+
+                            <label for="yearOfPassing">
+                                Year of Passing *
+                            </label>
+
+                            <input
+                                type="number"
+                                id="yearOfPassing"
+                                name="yearOfPassing"
+                                placeholder="e.g. 2025"
+                                min="1950"
+                                max="2099"
+                            />
+
+                        </div>
+
+                    </div>
+
+                    <!-- AWARDS -->
+                    <div class="form-group">
+
+                        <label for="awardsParticipation">
+                            Awards / Participation
+                        </label>
+
+                        <textarea
+                            id="awardsParticipation"
+                            name="awardsParticipation"
+                            rows="5"
+                            placeholder="Mention awards, achievements, participation, certifications, etc."
+                        ></textarea>
+
+                    </div>
+
+                    <!-- BUTTONS -->
                     <div class="button-group">
 
                         <button
