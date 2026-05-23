@@ -316,7 +316,7 @@
                                 type="text"
                                 id="highestDegree"
                                 name="highestDegree"
-                                placeholder="e.g. B.Tech, MBA"
+                                placeholder="e.g. B.Tech, MBA, BCA, etc."
                             />
 
                         </div>
@@ -403,12 +403,34 @@
 
                 <div class="step-card">
 
-                    <h2>Step 3</h2>
+                    <div class="step-header">
 
-                    <p>
-                        Medical History Section
-                    </p>
+                        <h2>Medical History</h2>
 
+                        <p>
+                            Please provide details regarding any medical conditions,
+                            ailments, or ongoing treatments.
+                        </p>
+
+                    </div>
+
+                    <!-- MEDICAL HISTORY -->
+                    <div class="form-group">
+
+                        <label for="medicalHistory">
+                            Medical Conditions / Ailments / Ongoing Treatment *
+                        </label>
+
+                        <textarea
+                            id="medicalHistory"
+                            name="medicalHistory"
+                            rows="8"
+                            placeholder="Describe any medical conditions, allergies, treatments, medications, or health concerns."
+                        ></textarea>
+
+                    </div>
+
+                    <!-- BUTTONS -->
                     <div class="button-group">
 
                         <button
@@ -432,7 +454,7 @@
                 </div>
 
             </section>
-
+            
             <!-- STEP 4 -->
             <section class="form-step" id="step-4">
 
