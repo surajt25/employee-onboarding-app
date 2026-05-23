@@ -46,12 +46,231 @@
 
                 <div class="step-card">
 
-                    <h2>Step 1</h2>
+                    <div class="step-header">
 
-                    <p>
-                        Personal Information Section
-                    </p>
+                        <h2>Personal Information</h2>
 
+                        <p>
+                            Please provide your personal details carefully.
+                        </p>
+
+                    </div>
+
+                    <!-- FORM GRID -->
+                    <div class="form-grid">
+
+                        <!-- EMAIL -->
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address *
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                            />
+
+                        </div>
+
+                        <!-- FULL NAME -->
+                        <div class="form-group">
+
+                            <label for="fullName">
+                                Full Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="Enter your full name"
+                            />
+
+                        </div>
+
+                        <!-- DOB -->
+                        <div class="form-group">
+
+                            <label for="dob">
+                                Date of Birth *
+                            </label>
+
+                            <input
+                                type="date"
+                                id="dob"
+                                name="dob"
+                            />
+
+                        </div>
+
+                        <!-- CONTACT -->
+                        <div class="form-group">
+
+                            <label for="contactNumber">
+                                Contact Number *
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="contactNumber"
+                                name="contactNumber"
+                                placeholder="Enter mobile number"
+                            />
+
+                        </div>
+
+                    </div>
+
+                    <!-- PARENTS -->
+                    <div class="form-group">
+
+                        <label for="parentsName">
+                            Mother & Father Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="parentsName"
+                            name="parentsName"
+                            placeholder="Enter parents name"
+                        />
+
+                    </div>
+
+                    <!-- GENDER -->
+                    <div class="form-group">
+
+                        <label>
+                            Gender *
+                        </label>
+
+                        <div class="radio-group">
+
+                            <label class="radio-option">
+
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Male"
+                                />
+
+                                Male
+
+                            </label>
+
+                            <label class="radio-option">
+
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Female"
+                                />
+
+                                Female
+
+                            </label>
+
+                            <label class="radio-option">
+
+                                <input
+                                    type="radio"
+                                    name="gender"
+                                    value="Other"
+                                />
+
+                                Other
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ADDRESS -->
+                    <div class="form-group">
+
+                        <label for="address">
+                            Residential Address *
+                        </label>
+
+                        <textarea
+                            id="address"
+                            name="address"
+                            rows="4"
+                            placeholder="Enter your residential address"
+                        ></textarea>
+
+                    </div>
+
+                    <!-- SOCIAL LINKS -->
+                    <div class="form-group">
+
+                        <label for="socialLinks">
+                            Social Links *
+                        </label>
+
+                        <textarea
+                            id="socialLinks"
+                            name="socialLinks"
+                            rows="4"
+                            placeholder="LinkedIn, GitHub, Twitter, etc."
+                        ></textarea>
+
+                    </div>
+
+                    <!-- MARITAL STATUS -->
+                    <div class="form-group">
+
+                        <label>
+                            Marital Status *
+                        </label>
+
+                        <div class="radio-group">
+
+                            <label class="radio-option">
+
+                                <input
+                                    type="radio"
+                                    name="maritalStatus"
+                                    value="Married"
+                                />
+
+                                Married
+
+                            </label>
+
+                            <label class="radio-option">
+
+                                <input
+                                    type="radio"
+                                    name="maritalStatus"
+                                    value="Unmarried"
+                                />
+
+                                Unmarried
+
+                            </label>
+
+                            <label class="radio-option">
+
+                                <input
+                                    type="radio"
+                                    name="maritalStatus"
+                                    value="Other"
+                                />
+
+                                Other
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BUTTONS -->
                     <div class="button-group next-only">
 
                         <button
