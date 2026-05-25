@@ -3,37 +3,66 @@ const uploadInputs = [
     {
         inputId: "addressProof",
         previewId: "addressProofPreview",
-        maxFiles: 1
+        maxFiles: 1,
+        allowedTypes: [
+            "application/pdf",
+            "image/jpeg",
+            "image/png"
+        ]
     },
 
     {
         inputId: "idProof",
         previewId: "idProofPreview",
-        maxFiles: 1
+        maxFiles: 1,
+        allowedTypes: [
+            "application/pdf",
+            "image/jpeg",
+            "image/png"
+        ]
     },
 
     {
         inputId: "experienceLetters",
         previewId: "experienceLettersPreview",
-        maxFiles: 5
+        maxFiles: 5,
+        allowedTypes: [
+            "application/pdf",
+            "image/jpeg",
+            "image/png"
+        ]
     },
 
     {
         inputId: "payslips",
         previewId: "payslipsPreview",
-        maxFiles: 5
+        maxFiles: 5,
+        allowedTypes: [
+            "application/pdf",
+            "image/jpeg",
+            "image/png"
+        ]
     },
 
     {
         inputId: "degreeCertificates",
         previewId: "degreeCertificatesPreview",
-        maxFiles: 5
+        maxFiles: 5,
+        allowedTypes: [
+            "application/pdf",
+            "image/jpeg",
+            "image/png"
+        ]
     },
 
     {
         inputId: "passportPhotos",
         previewId: "passportPhotosPreview",
-        maxFiles: 1
+        maxFiles: 1,
+        allowedTypes: [
+            "image/jpeg",
+            "image/png"
+        ]
     }
 
 ];
@@ -86,6 +115,20 @@ function handleFilePreview(config) {
 
     /* Create File Cards */
     files.forEach((file, index) => {
+
+        /* FILE TYPE VALIDATION */
+        if (!validateFileType(file, config.allowedTypes)) {
+
+            alert(
+                `${file.name} has invalid file type`
+            );
+
+            input.value = "";
+
+            previewContainer.innerHTML = "";
+
+            return;
+        }
 
         const fileCard =
             document.createElement("div");
@@ -176,6 +219,12 @@ function formatFileSize(bytes) {
     }
 
     return `${kb.toFixed(2)} KB`;
+}
+
+/* VALIDATE FILE TYPE */
+function validateFileType(file, allowedTypes) {
+
+    return allowedTypes.includes(file.type);
 }
 
 
