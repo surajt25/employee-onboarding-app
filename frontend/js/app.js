@@ -11,16 +11,21 @@ employeeForm.addEventListener("submit", function (event) {
 });
 */
 
+const employeeForm =
+    document.getElementById("employeeForm");
 
-/* ----- Temporary submission handler for demo purposes ----- */
-const employeeForm = document.getElementById("employeeForm");
 
 /* FORM SUBMIT */
-
 employeeForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
-    alert("Frontend UI completed successfully!");
+    const isValid =
+        validateStep5();
 
+    if (!isValid) {
+        return;
+    }
+
+    alert("Validation successful!");
 });

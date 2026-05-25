@@ -19,17 +19,32 @@ function showStep(stepNumber) {
     updateProgressBar();
 }
 
-
 /* NEXT STEP */
 function nextStep() {
-
-    if (currentStep < totalSteps) {
-
-        currentStep++;
-
-        showStep(currentStep);
+    let isStepValid = true;
+    switch (currentStep) {
+        case 1:
+            isStepValid = validateStep1();
+            break;
+        case 2:
+            isStepValid = validateStep2();
+            break;
+        case 3:
+            isStepValid = validateStep3();
+            break;
+        case 4:
+            isStepValid = validateStep4();
+            break;
     }
 
+    if (!isStepValid) {
+        return;
+    }
+
+    if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+    }
 }
 
 

@@ -396,3 +396,17 @@ textarea {
 .checkbox-option input {
     width: auto;
 }
+
+
+/* ----- Validation CSS ----- */
+/* ERROR STATE */
+.input-error {
+    border-color: #dc2626 !important;
+}
+
+/* ERROR MESSAGE */
+.error-message {
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: 6px;
+}
