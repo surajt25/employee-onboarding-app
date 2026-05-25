@@ -399,14 +399,88 @@ textarea {
 
 
 /* ----- Validation CSS ----- */
-/* ERROR STATE */
+/* Error State */
 .input-error {
     border-color: #dc2626 !important;
 }
 
-/* ERROR MESSAGE */
+/* Error Message */
 .error-message {
     color: #dc2626;
     font-size: 14px;
     margin-top: 6px;
+}
+
+
+/* ----------- File Preview Styles ----------- */
+
+/* File Preview Container */
+.file-preview-container {
+    margin-top: 15px;
+}
+
+
+/* File Card */
+.file-preview-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 15px;
+    margin-bottom: 10px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background-color: white;
+}
+
+
+/* File Info */
+.file-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+/* File Name */
+.file-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+
+    word-break: break-word;
+}
+
+
+/* File Size */
+.file-size {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/* Remove Button */
+.remove-file-btn {
+    border: none;
+    background-color: #dc2626;
+    color: white;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+/* Remove Button Hover */
+.remove-file-btn:hover {
+    background-color: #b91c1c;
 }
