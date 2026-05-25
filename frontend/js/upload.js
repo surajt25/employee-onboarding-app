@@ -7,6 +7,7 @@ const uploadInputs = [
         allowedTypes: [
             "application/pdf",
             "image/jpeg",
+            "image/jpg",
             "image/png"
         ]
     },
@@ -18,6 +19,7 @@ const uploadInputs = [
         allowedTypes: [
             "application/pdf",
             "image/jpeg",
+            "image/jpg",
             "image/png"
         ]
     },
@@ -29,6 +31,7 @@ const uploadInputs = [
         allowedTypes: [
             "application/pdf",
             "image/jpeg",
+            "image/jpg",
             "image/png"
         ]
     },
@@ -40,6 +43,7 @@ const uploadInputs = [
         allowedTypes: [
             "application/pdf",
             "image/jpeg",
+            "image/jpg",
             "image/png"
         ]
     },
@@ -51,6 +55,7 @@ const uploadInputs = [
         allowedTypes: [
             "application/pdf",
             "image/jpeg",
+            "image/jpg",
             "image/png"
         ]
     },
@@ -61,6 +66,7 @@ const uploadInputs = [
         maxFiles: 1,
         allowedTypes: [
             "image/jpeg",
+            "image/jpg",
             "image/png"
         ]
     }
@@ -116,7 +122,7 @@ function handleFilePreview(config) {
     /* Create File Cards */
     files.forEach((file, index) => {
 
-        /* FILE TYPE VALIDATION */
+        /* File Type Validation */
         if (!validateFileType(file, config.allowedTypes)) {
 
             alert(
@@ -136,15 +142,20 @@ function handleFilePreview(config) {
         fileCard.className =
             "file-preview-card";
 
-
-        /* File Info */
-        const fileInfo =
+        
+        const fileCardLeft =
             document.createElement("div");
 
+        fileCardLeft.className =
+            "file-card-left";
+
+        const fileInfo =
+            document.createElement("div");
+            
         fileInfo.className =
             "file-info";
 
-
+        
         /* File Name */
         const fileName =
             document.createElement("div");
@@ -165,6 +176,16 @@ function handleFilePreview(config) {
 
         fileSize.innerText =
             formatFileSize(file.size);
+
+        /* File Status */
+        const fileStatus =
+            document.createElement("div");
+
+        fileStatus.className =
+            "file-status";
+
+        fileStatus.innerText =
+            "Ready to upload";
 
 
         /* Remove Button */
@@ -195,7 +216,11 @@ function handleFilePreview(config) {
 
         fileInfo.appendChild(fileSize);
 
-        fileCard.appendChild(fileInfo);
+        fileCardLeft.appendChild(fileInfo);
+
+        fileCardLeft.appendChild(fileStatus);
+
+        fileCard.appendChild(fileCardLeft);
 
         fileCard.appendChild(removeBtn);
 

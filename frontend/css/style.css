@@ -376,13 +376,13 @@ textarea {
 
 /* ----- Banking Details Page ----- */
 
-/* CHECKBOX GROUP */
+/* Checkbox Group */
 .checkbox-group {
     margin-top: 20px;
 }
 
 
-/* CHECKBOX OPTION */
+/* Checkbox Option */
 .checkbox-option {
     display: flex;
     align-items: center;
@@ -392,7 +392,7 @@ textarea {
 }
 
 
-/* CHECKBOX INPUT */
+/* Checkbox Input */
 .checkbox-option input {
     width: auto;
 }
@@ -483,4 +483,24 @@ textarea {
 /* Remove Button Hover */
 .remove-file-btn:hover {
     background-color: #b91c1c;
+}
+
+
+/* ------ Upload Status UI CSS ------ */
+
+/* File Status */
+.file-status {
+    margin-top: 5px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #16a34a;
+}
+
+
+/* File Card Left */
+.file-card-left {
+    display: flex;
+    flex-direction: column;
 }
