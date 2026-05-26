@@ -1,3 +1,6 @@
+/* Global File Storage */
+const uploadedFilesData = {};
+
 /* File Input Config */
 const uploadInputs = [
     {
@@ -90,7 +93,7 @@ uploadInputs.forEach((config) => {
 
 
 /* Handle File Preview */
-function handleFilePreview(config) {
+async function handleFilePreview(config) {
 
     const input =
         document.getElementById(config.inputId);
@@ -102,9 +105,14 @@ function handleFilePreview(config) {
         Array.from(input.files);
 
 
+    /* Valid FIle Storage */
+    const validFiles = [];
+
     /* Clear Old Preview */
     previewContainer.innerHTML = "";
 
+    /* Reset Stored Data */
+    uploadedFilesData[config.inputId] = [];
 
     /* File Count Validation */
     if (files.length > config.maxFiles) {
@@ -120,7 +128,7 @@ function handleFilePreview(config) {
 
 
     /* Create File Cards */
-    files.forEach((file, index) => {
+    for (const [index, file] of files.entries()) {
 
         /* File Type Validation */
         if (!validateFileType(file, config.allowedTypes)) {
@@ -129,12 +137,34 @@ function handleFilePreview(config) {
                 `${file.name} has invalid file type`
             );
 
-            input.value = "";
-
-            previewContainer.innerHTML = "";
-
-            return;
+            continue;
         }
+
+        /* Base64 Conversion */ 
+        const base64Data =
+            await convertFileToBase64(file);
+
+
+        /* Store Valid File */
+        validFiles.push(file);
+
+
+        /* Store File Data */
+        if (!uploadedFilesData[config.inputId]) {
+
+            uploadedFilesData[config.inputId] = [];
+        }
+
+        uploadedFilesData[config.inputId].push({
+
+            fileName: file.name,
+
+            fileSize: file.size,
+
+            mimeType: file.type,
+
+            base64: base64Data
+        });
 
         const fileCard =
             document.createElement("div");
@@ -226,7 +256,22 @@ function handleFilePreview(config) {
 
         previewContainer.appendChild(fileCard);
 
+    };
+
+    /* Update Input Files */
+    const dt =
+        new DataTransfer();
+
+    validFiles.forEach((file) => {
+
+        dt.items.add(file);
+
     });
+
+    input.files = dt.files;
+
+    /* Temp Debug */
+    console.log(uploadedFilesData);
 
 }
 
@@ -253,8 +298,35 @@ function validateFileType(file, allowedTypes) {
 }
 
 
+/* Convert File To BASE64 */
+function convertFileToBase64(file) {
+
+    return new Promise((resolve, reject) => {
+
+        const reader =
+            new FileReader();
+
+        reader.readAsDataURL(file);
+
+        reader.onload = () => {
+
+            resolve(reader.result);
+
+        };
+
+        reader.onerror = (error) => {
+
+            reject(error);
+
+        };
+
+    });
+
+}
+
+
 /* Remove File */
-function removeFile(config, removeIndex) {
+async function removeFile(config, removeIndex) {
 
     const input =
         document.getElementById(config.inputId);
@@ -278,5 +350,7 @@ function removeFile(config, removeIndex) {
 
     input.files = dt.files;
 
-    handleFilePreview(config);
+    await handleFilePreview(config);
+
+    console.log(uploadedFilesData);
 }
