@@ -25,11 +25,11 @@
 
         </header>
 
-        <!-- PROGRESS BAR -->
+        <!-- Progress Bar -->
         <div class="progress-wrapper">
 
             <div class="progress-info">
-                <span id="stepIndicator">Step 1 of 5</span>
+                <span id="stepIndicator">Step 1 of 6</span>
             </div>
 
             <div class="progress-bar">
@@ -75,7 +75,7 @@
 
                         </div>
 
-                        <!-- FULL NAME -->
+                        <!-- Full Name -->
                         <div class="form-group">
 
                             <label for="fullName">
@@ -106,7 +106,7 @@
 
                         </div>
 
-                        <!-- CONTACT -->
+                        <!-- Contact Number -->
                         <div class="form-group">
 
                             <label for="contactNumber">
@@ -124,7 +124,7 @@
 
                     </div>
 
-                    <!-- PARENTS -->
+                    <!-- Parents -->
                     <div class="form-group">
 
                         <label for="parentsName">
@@ -140,7 +140,7 @@
 
                     </div>
 
-                    <!-- GENDER -->
+                    <!-- Gender -->
                     <div class="form-group">
 
                         <label>
@@ -189,7 +189,7 @@
 
                     </div>
 
-                    <!-- ADDRESS -->
+                    <!-- Address -->
                     <div class="form-group">
 
                         <label for="address">
@@ -205,7 +205,7 @@
 
                     </div>
 
-                    <!-- SOCIAL LINKS -->
+                    <!-- Social Links -->
                     <div class="form-group">
 
                         <label for="socialLinks">
@@ -221,7 +221,7 @@
 
                     </div>
 
-                    <!-- MARITAL STATUS -->
+                    <!-- Marital Status -->
                     <div class="form-group">
 
                         <label>
@@ -270,7 +270,7 @@
 
                     </div>
 
-                    <!-- BUTTONS -->
+                    <!-- Buttons -->
                     <div class="button-group next-only">
 
                         <button
@@ -305,7 +305,7 @@
                     <!-- FORM GRID -->
                     <div class="form-grid">
 
-                        <!-- DEGREE -->
+                        <!-- Degree -->
                         <div class="form-group">
 
                             <label for="highestDegree">
@@ -321,7 +321,7 @@
 
                         </div>
 
-                        <!-- INSTITUTE -->
+                        <!-- Institute -->
                         <div class="form-group">
 
                             <label for="institutionName">
@@ -337,7 +337,7 @@
 
                         </div>
 
-                        <!-- YEAR OF PASSING -->
+                        <!-- Year of Passing -->
                         <div class="form-group">
 
                             <label for="yearOfPassing">
@@ -357,7 +357,7 @@
 
                     </div>
 
-                    <!-- AWARDS -->
+                    <!-- Awards / Participations -->
                     <div class="form-group">
 
                         <label for="awardsParticipation">
@@ -373,7 +373,7 @@
 
                     </div>
 
-                    <!-- BUTTONS -->
+                    <!-- Buttons -->
                     <div class="button-group">
 
                         <button
@@ -398,8 +398,156 @@
 
             </section>
 
+
             <!-- STEP 3 -->
             <section class="form-step" id="step-3">
+
+                <div class="step-card">
+
+                    <div class="step-header">
+
+                        <h2>Past Employers Details</h2>
+
+                        <p>
+                            Please provide details about your previous employment.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Fresher with no Experience -->
+                    <div class="checkbox-group">
+
+                        <label class="checkbox-option">
+
+                            <input
+                                type="checkbox"
+                                id="isFresher"
+                                name="isFresher"
+                            />
+
+                            I am a Fresher (No Previous Employment)
+
+                        </label>
+
+                    </div>
+
+
+                    <div id="pastEmployerFields">
+                        
+                        <!-- Organization -->
+                        <div class="form-group">
+
+                            <label for="organizationName">
+                                Name of the Past Organization *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="organizationName"
+                                name="organizationName"
+                                placeholder="Enter organization name"
+                            />
+
+                        </div>
+
+                        <!-- Designation -->
+                        <div class="form-group">
+
+                            <label for="pastDesignation">
+                                Past Job Designation *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="pastDesignation"
+                                name="pastDesignation"
+                                placeholder="Enter designation"
+                            />
+
+                        </div>
+
+                        <!-- FORM GRID -->
+                        <div class="form-grid">
+
+                            <!-- Worked From -->
+                            <div class="form-group">
+
+                                <label for="workedFrom">
+                                    Worked From *
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="workedFrom"
+                                    name="workedFrom"
+                                />
+
+                            </div>
+
+                            <!-- Worked Till -->
+                            <div class="form-group">
+
+                                <label for="workedTill">
+                                    Worked Till *
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="workedTill"
+                                    name="workedTill"
+                                />
+
+                            </div>
+
+                        </div>
+
+                        <!-- Reference -->
+                        <div class="form-group">
+
+                            <label for="referenceDetails">
+                                Reference *
+                            </label>
+
+                            <textarea
+                                id="referenceDetails"
+                                name="referenceDetails"
+                                rows="5"
+                                placeholder="Provide reference details (Name, Designation, Contact Number, Organization)"
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="button-group">
+
+                        <button
+                            type="button"
+                            class="btn btn-back"
+                            onclick="prevStep()"
+                        >
+                            Back
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-next"
+                            onclick="nextStep()"
+                        >
+                            Next
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STEP 4 -->
+            <section class="form-step" id="step-4">
 
                 <div class="step-card">
 
@@ -414,7 +562,7 @@
 
                     </div>
 
-                    <!-- MEDICAL HISTORY -->
+                    <!-- Medical History -->
                     <div class="form-group">
 
                         <label for="medicalHistory">
@@ -430,212 +578,7 @@
 
                     </div>
 
-                    <!-- BUTTONS -->
-                    <div class="button-group">
-
-                        <button
-                            type="button"
-                            class="btn btn-back"
-                            onclick="prevStep()"
-                        >
-                            Back
-                        </button>
-
-                        <button
-                            type="button"
-                            class="btn btn-next"
-                            onclick="nextStep()"
-                        >
-                            Next
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-            <!-- STEP 4 -->
-            <section class="form-step" id="step-4">
-
-                <div class="step-card">
-
-                    <div class="step-header">
-
-                        <h2>Upload Documents</h2>
-
-                        <p>
-                            Please upload all required documents carefully.
-                        </p>
-
-                    </div>
-
-                    <!-- ADDRESS PROOF -->
-                    <div class="upload-card">
-
-                        <div class="upload-header">
-
-                            <h3>Address Proof *</h3>
-
-                            <span>
-                                Max: 1 File | 10 MB
-                            </span>
-
-                        </div>
-
-                        <input
-                            type="file"
-                            id="addressProof"
-                            name="addressProof"
-                            accept=".pdf,.jpg,.jpeg,.png"
-                        />
-
-                        <div
-                            class="file-preview-container"
-                            id="addressProofPreview"
-                        ></div>
-
-                    </div>
-
-                    <!-- ID PROOF -->
-                    <div class="upload-card">
-
-                        <div class="upload-header">
-
-                            <h3>ID Proof *</h3>
-
-                            <span>
-                                Max: 1 File | 10 MB
-                            </span>
-
-                        </div>
-
-                        <input
-                            type="file"
-                            id="idProof"
-                            name="idProof"
-                            accept=".pdf,.jpg,.jpeg,.png"
-                        />
-
-                        <div
-                            class="file-preview-container"
-                            id="idProofPreview"
-                        ></div> 
-
-                    </div>
-
-                    <!-- EXPERIENCE LETTERS -->
-                    <div class="upload-card">
-
-                        <div class="upload-header">
-
-                            <h3>Experience Letters *</h3>
-
-                            <span>
-                                Max: 5 Files | 10 MB each
-                            </span>
-
-                        </div>
-
-                        <input
-                            type="file"
-                            id="experienceLetters"
-                            name="experienceLetters"
-                            multiple
-                            accept=".pdf,.jpg,.jpeg,.png"
-                        />
-
-                        <div
-                            class="file-preview-container"
-                            id="experienceLettersPreview"
-                        ></div>
-
-                    </div>
-
-                    <!-- PAYSLIPS -->
-                    <div class="upload-card">
-
-                        <div class="upload-header">
-
-                            <h3>Last 3 Months Payslips *</h3>
-
-                            <span>
-                                Max: 5 Files | 10 MB each
-                            </span>
-
-                        </div>
-
-                        <input
-                            type="file"
-                            id="payslips"
-                            name="payslips"
-                            multiple
-                            accept=".pdf,.jpg,.jpeg,.png"
-                        />
-
-                        <div
-                            class="file-preview-container"
-                            id="payslipsPreview"
-                        ></div>
-
-                    </div>
-
-                    <!-- CERTIFICATES -->
-                    <div class="upload-card">
-
-                        <div class="upload-header">
-
-                            <h3>Highest Degree Certificates *</h3>
-
-                            <span>
-                                Max: 5 Files | 10 MB each
-                            </span>
-
-                        </div>
-
-                        <input
-                            type="file"
-                            id="degreeCertificates"
-                            name="degreeCertificates"
-                            multiple
-                            accept=".pdf,.jpg,.jpeg,.png"
-                        />
-
-                        <div
-                            class="file-preview-container"
-                            id="degreeCertificatesPreview"
-                        ></div>
-
-                    </div>
-
-                    <!-- PASSPORT PHOTOS -->
-                    <div class="upload-card">
-
-                        <div class="upload-header">
-
-                            <h3>Passport Size Photographs *</h3>
-
-                            <span>
-                                Images Only | Max: 1 File
-                            </span>
-
-                        </div>
-
-                        <input
-                            type="file"
-                            id="passportPhotos"
-                            name="passportPhotos"
-                            accept=".jpg,.jpeg,.png"
-                        />
-
-                        <div
-                            class="file-preview-container"
-                            id="passportPhotosPreview"
-                        ></div>
-
-                    </div>
-
-                    <!-- BUTTONS -->
+                    <!-- Buttons -->
                     <div class="button-group">
 
                         <button
@@ -667,6 +610,219 @@
 
                     <div class="step-header">
 
+                        <h2>Upload Documents</h2>
+
+                        <p>
+                            Please upload all required documents carefully.
+                        </p>
+
+                    </div>
+
+                    <!-- Address Proof -->
+                    <div class="upload-card">
+
+                        <div class="upload-header">
+
+                            <h3>Address Proof *</h3>
+
+                            <span>
+                                Max: 1 File | 10 MB
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="file"
+                            id="addressProof"
+                            name="addressProof"
+                            accept=".pdf,.jpg,.jpeg,.png"
+                        />
+
+                        <div
+                            class="file-preview-container"
+                            id="addressProofPreview"
+                        ></div>
+
+                    </div>
+
+                    <!-- ID Proof -->
+                    <div class="upload-card">
+
+                        <div class="upload-header">
+
+                            <h3>ID Proof *</h3>
+
+                            <span>
+                                Max: 1 File | 10 MB
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="file"
+                            id="idProof"
+                            name="idProof"
+                            accept=".pdf,.jpg,.jpeg,.png"
+                        />
+
+                        <div
+                            class="file-preview-container"
+                            id="idProofPreview"
+                        ></div> 
+
+                    </div>
+
+                    <!-- Experience Letters -->
+                    <div id="experienceLettersSection">
+
+                        <div class="upload-card">
+
+                            <div class="upload-header">
+
+                                <h3>Experience Letters *</h3>
+
+                                <span>
+                                    Max: 5 Files | 10 MB each
+                                </span>
+
+                            </div>
+
+                            <input
+                                type="file"
+                                id="experienceLetters"
+                                name="experienceLetters"
+                                multiple
+                                accept=".pdf,.jpg,.jpeg,.png"
+                            />
+
+                            <div
+                                class="file-preview-container"
+                                id="experienceLettersPreview"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Payslips -->
+                     <div id="payslipsSection">
+
+                        <div class="upload-card">
+
+                            <div class="upload-header">
+
+                                <h3>Last 3 Months Payslips *</h3>
+
+                                <span>
+                                    Max: 5 Files | 10 MB each
+                                </span>
+
+                            </div>
+
+                            <input
+                                type="file"
+                                id="payslips"
+                                name="payslips"
+                                multiple
+                                accept=".pdf,.jpg,.jpeg,.png"
+                            />
+
+                            <div
+                                class="file-preview-container"
+                                id="payslipsPreview"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Certificates -->
+                    <div class="upload-card">
+
+                        <div class="upload-header">
+
+                            <h3>Highest Degree Certificates *</h3>
+
+                            <span>
+                                Max: 5 Files | 10 MB each
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="file"
+                            id="degreeCertificates"
+                            name="degreeCertificates"
+                            multiple
+                            accept=".pdf,.jpg,.jpeg,.png"
+                        />
+
+                        <div
+                            class="file-preview-container"
+                            id="degreeCertificatesPreview"
+                        ></div>
+
+                    </div>
+
+                    <!-- Passport Photos -->
+                    <div class="upload-card">
+
+                        <div class="upload-header">
+
+                            <h3>Passport Size Photographs *</h3>
+
+                            <span>
+                                Images Only | Max: 1 File
+                            </span>
+
+                        </div>
+
+                        <input
+                            type="file"
+                            id="passportPhotos"
+                            name="passportPhotos"
+                            accept=".jpg,.jpeg,.png"
+                        />
+
+                        <div
+                            class="file-preview-container"
+                            id="passportPhotosPreview"
+                        ></div>
+
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="button-group">
+
+                        <button
+                            type="button"
+                            class="btn btn-back"
+                            onclick="prevStep()"
+                        >
+                            Back
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-next"
+                            onclick="nextStep()"
+                        >
+                            Next
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- STEP 6 -->
+            <section class="form-step" id="step-6">
+
+                <div class="step-card">
+
+                    <div class="step-header">
+
                         <h2>Bank Account Details</h2>
 
                         <p>
@@ -678,7 +834,7 @@
                     <!-- FORM GRID -->
                     <div class="form-grid">
 
-                        <!-- BANK NAME -->
+                        <!-- Bank Name -->
                         <div class="form-group">
 
                             <label for="bankName">
@@ -694,7 +850,7 @@
 
                         </div>
 
-                        <!-- ACCOUNT HOLDER -->
+                        <!-- Account Holder -->
                         <div class="form-group">
 
                             <label for="accountHolderName">
@@ -710,7 +866,7 @@
 
                         </div>
 
-                        <!-- ACCOUNT TYPE -->
+                        <!-- Account Type -->
                         <div class="form-group">
 
                             <label for="accountType">
@@ -741,7 +897,7 @@
 
                         </div>
 
-                        <!-- ACCOUNT NUMBER -->
+                        <!-- Account Number -->
                         <div class="form-group">
 
                             <label for="accountNumber">
@@ -775,7 +931,7 @@
 
                     </div>
 
-                    <!-- BANK ADDRESS -->
+                    <!-- Bank Address -->
                     <div class="form-group">
 
                         <label for="bankAddress">
@@ -791,7 +947,7 @@
 
                     </div>
 
-                    <!-- COPY RESPONSE -->
+                    <!-- Copy Response -->
                     <div class="checkbox-group">
 
                         <label class="checkbox-option">
@@ -808,7 +964,7 @@
 
                     </div>
 
-                    <!-- BUTTONS -->
+                    <!-- Buttons -->
                     <div class="button-group">
 
                         <button
@@ -840,6 +996,7 @@
     <script src="js/validation.js"></script>
     <script src="js/steps.js"></script>
     <script src="js/upload.js"></script>
+    <script src="js/fresher-toggle.js"></script>
     <script src="js/app.js"></script>
 
 </body>

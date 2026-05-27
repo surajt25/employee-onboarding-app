@@ -1,9 +1,9 @@
 let currentStep = 1;
 
-const totalSteps = 5;
+const totalSteps = 6;
 
 
-/* SHOW STEP */
+/* Show Step */
 function showStep(stepNumber) {
 
     const steps = document.querySelectorAll(".form-step");
@@ -19,21 +19,24 @@ function showStep(stepNumber) {
     updateProgressBar();
 }
 
-/* NEXT STEP */
+/* Next Step */
 function nextStep() {
     let isStepValid = true;
     switch (currentStep) {
         case 1:
-            isStepValid = validateStep1();
+            isStepValid = validatePersonalInfo();
             break;
         case 2:
-            isStepValid = validateStep2();
+            isStepValid = validateQualification();
             break;
         case 3:
-            isStepValid = validateStep3();
+            isStepValid = validatePastEmployer();
             break;
         case 4:
-            isStepValid = validateStep4();
+            isStepValid = validateMedicalHistory();
+            break;
+        case 5:
+            isStepValid = validateUploads();
             break;
     }
 
@@ -48,7 +51,7 @@ function nextStep() {
 }
 
 
-/* PREVIOUS STEP */
+/* Previous Step */
 function prevStep() {
 
     if (currentStep > 1) {
@@ -61,7 +64,7 @@ function prevStep() {
 }
 
 
-/* UPDATE PROGRESS BAR */
+/* Update Progress Bar */
 function updateProgressBar() {
 
     const progressFill = document.getElementById("progressFill");
