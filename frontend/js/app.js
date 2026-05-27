@@ -21,7 +21,7 @@ employeeForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const isValid =
-        validateStep6();
+        validateBankDetails();
 
     if (!isValid) {
         return;
