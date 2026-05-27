@@ -1,5 +1,5 @@
 
-/* ----- SHOW ERROR -----*/
+/* ----- Show Error -----*/
 function showError(input, message) {
 
     clearError(input);
@@ -15,7 +15,7 @@ function showError(input, message) {
     input.parentElement.appendChild(error);
 }
 
-/* ----- CLEAR ERROR ----- */
+/* ----- Clear Error ----- */
 function clearError(input) {
 
     input.classList.remove("input-error");
@@ -29,7 +29,7 @@ function clearError(input) {
 }
 
 
-/* ----- EMAIL VALIDATION ----- */
+/* ----- EMAIL Validation ----- */
 function isValidEmail(email) {
 
     const emailRegex =
@@ -39,7 +39,7 @@ function isValidEmail(email) {
 }
 
 
-/* ----- PHONE VALIDATION ----- */
+/* ----- Phone Validation ----- */
 function isValidPhone(phone) {
 
     const phoneRegex =
@@ -49,7 +49,7 @@ function isValidPhone(phone) {
 }
 
 
-/* ----- IFSC VALIDATION ----- */
+/* ----- IFSC Validation ----- */
 function isValidIFSC(ifsc) {
 
     const ifscRegex =
@@ -59,7 +59,7 @@ function isValidIFSC(ifsc) {
 }
 
 
-/* ----- FILE SIZE VALIDATION ----- */
+/* ----- File Size Validation ----- */
 function validateFileSize(file, maxMB = 10) {
 
     const maxBytes = maxMB * 1024 * 1024;
@@ -68,8 +68,8 @@ function validateFileSize(file, maxMB = 10) {
 }
 
 
-/* ----- VALIDATE STEP 1 ----- */
-function validateStep1() {
+/* ----- Validate Step 1 ----- */
+function validatePersonalInfo() {
 
     let isValid = true;
 
@@ -90,7 +90,7 @@ function validateStep1() {
     }
 
 
-    /* FULL NAME */
+    /* Full Name */
     const fullName =
         document.getElementById("fullName");
 
@@ -115,7 +115,7 @@ function validateStep1() {
     }
 
 
-    /* CONTACT */
+    /* Contact */
     const contact =
         document.getElementById("contactNumber");
 
@@ -131,7 +131,7 @@ function validateStep1() {
         clearError(contact);
     }
 
-    /* PARENTS */
+    /* Parents */
     const parents =
         document.getElementById("parentsName");
 
@@ -144,7 +144,7 @@ function validateStep1() {
     }
 
 
-    /* ADDRESS */
+    /* Address */
     const address =
         document.getElementById("address");
 
@@ -157,7 +157,7 @@ function validateStep1() {
     }
 
 
-    /* SOCIAL */
+    /* Social */
     const social =
         document.getElementById("socialLinks");
 
@@ -173,8 +173,8 @@ function validateStep1() {
 }
 
 
-/* ----- VALIDATE STEP 2 ------ */
-function validateStep2() {
+/* ----- Validate Step 2 ----- */
+function validateQualification() {
 
     let isValid = true;
 
@@ -186,6 +186,12 @@ function validateStep2() {
 
     const year =
         document.getElementById("yearOfPassing");
+    
+    const currentYear = new Date().getFullYear();
+    if (
+        year.value < 1950 ||
+        year.value > currentYear + 1
+    )
 
 
     if (!degree.value.trim()) {
@@ -216,8 +222,127 @@ function validateStep2() {
 }
 
 
-/* ------- VALIDATE STEP 3 ----- */
-function validateStep3() {
+/* ----- Validate Step 3 ----- */
+function validatePastEmployer() {
+
+    let isValid = true;
+
+    const isFresher =
+        document.getElementById("isFresher").checked;
+
+    const organization =
+        document.getElementById("organizationName");
+
+    const designation =
+        document.getElementById("pastDesignation");
+
+    const workedFrom =
+        document.getElementById("workedFrom");
+
+    const workedTill =
+        document.getElementById("workedTill");
+
+    const reference =
+        document.getElementById("referenceDetails");
+
+    /* Skip Validation For Freshers */
+    if (isFresher) {
+        return true;
+    }
+
+
+    /* Organization */
+    if (!organization.value.trim()) {
+
+        showError(
+            organization,
+            "Organization name is required"
+        );
+
+        isValid = false;
+
+    } else {
+        clearError(organization);
+    }
+
+
+    /* Designation */
+    if (!designation.value.trim()) {
+
+        showError(
+            designation,
+            "Designation is required"
+        );
+
+        isValid = false;
+
+    } else {
+        clearError(designation);
+    }
+
+
+    /* Worked From */
+    if (!workedFrom.value) {
+
+        showError(
+            workedFrom,
+            "Worked from date is required"
+        );
+
+        isValid = false;
+
+    } else {
+        clearError(workedFrom);
+    }
+
+
+    /* Worked Till */
+    if (!workedTill.value) {
+
+        showError(
+            workedTill,
+            "Worked till date is required"
+        );
+
+        isValid = false;
+
+    } else if (
+        workedTill.value < workedFrom.value
+    ) {
+
+        showError(
+            workedTill,
+            "Worked till date cannot be before worked from date"
+        );
+
+        isValid = false;
+
+    } else {
+        clearError(workedTill);
+    }
+
+
+    /* Reference */
+    if (!reference.value.trim()) {
+
+        showError(
+            reference,
+            "Reference details are required"
+        );
+
+        isValid = false;
+
+    } else {
+        clearError(reference);
+    }
+
+    return isValid;
+    /* return true; */
+}
+
+
+/* ------- Validate Step 4 ----- */
+function validateMedicalHistory() {
 
     let isValid = true;
 
@@ -241,72 +366,32 @@ function validateStep3() {
 }
 
 
-/* ----- VALIDATE STEP 4 ------- */
-function validateStep4() {
+/* ----- Validate Step 5 ----- */
+function validateUploads() {
 
     let isValid = true;
+
+    const isFresher =
+        document.getElementById("isFresher").checked;
 
     const fileInputs = [
         "addressProof",
         "idProof",
-        "experienceLetters",
-        "payslips",
         "degreeCertificates",
         "passportPhotos"
     ];
 
-    fileInputs.forEach((id) => {
+    /* Non-Fresher Required File Inputs */
+    if (!isFresher) {
 
-        const input =
-            document.getElementById(id);
-
-        if (input.files.length === 0) {
-
-            showError(input, "This upload is required");
-
-            isValid = false;
-
-        } else {
-            clearError(input);
-
-            Array.from(input.files).forEach((file) => {
-
-                if (!validateFileSize(file)) {
-
-                    showError(
-                        input,
-                        "File exceeds 10 MB limit"
-                    );
-
-                    isValid = false;
-                }
-            });
-        }
-
-    });
-
-    return isValid;
-}
+        fileInputs.push(
+            "experienceLetters",
+            "payslips"
+        );
+    }
 
 
-
-
-/* ----- VALIDATE STEP 4 ----- */
-function validateStep4() {
-
-    let isValid = true;
-
-    /* ----- FILE INPUTS ----- */
-    const fileInputs = [
-        "addressProof",
-        "idProof",
-        "experienceLetters",
-        "payslips",
-        "degreeCertificates",
-        "passportPhotos"
-    ];
-
-    /* ----- UPLOAD RULES ----- */
+    /* ----- Upload Rules ----- */
     const uploadRules = {
 
         addressProof: {
@@ -342,7 +427,7 @@ function validateStep4() {
         const rules =
             uploadRules[id];
 
-        /* REQUIRED CHECK */
+        /* Required CHeck */
         if (input.files.length === 0) {
 
             showError(
@@ -353,10 +438,9 @@ function validateStep4() {
             isValid = false;
 
         } else {
-
             clearError(input);
 
-            /* MAX FILE COUNT CHECK */
+            /* Max File Count Check */
             if (
                 rules &&
                 input.files.length > rules.maxFiles
@@ -370,7 +454,7 @@ function validateStep4() {
                 isValid = false;
             }
 
-            /* FILE SIZE CHECK */
+            /* File Size Check */
             Array.from(input.files).forEach((file) => {
 
                 if (!validateFileSize(file)) {
@@ -391,8 +475,8 @@ function validateStep4() {
 }
 
 
-/* ----- VALIDATE STEP 5 ----- */
-function validateStep5() {
+/* ----- Validate Step 6 ----- */
+function validateBankDetails() {
 
     let isValid = true;
 

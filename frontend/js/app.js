@@ -15,13 +15,13 @@ const employeeForm =
     document.getElementById("employeeForm");
 
 
-/* FORM SUBMIT */
+/* Form Submit */
 employeeForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
     const isValid =
-        validateStep5();
+        validateStep6();
 
     if (!isValid) {
         return;
