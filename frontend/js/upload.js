@@ -154,26 +154,26 @@ async function handleFilePreview(config) {
         /* Store Valid File */
         validFiles.push(file);
 
+        let uploadResponse = null;
+
         /* Upload Address Proof To Drive */
-        if (config.inputId === "addressProof") {
+        uploadResponse =
+            await uploadFileToDrive({
 
-            const uploadResponse =
-                await uploadFileToDrive({
+                fileName: file.name,
 
-                    fileName: file.name,
+                mimeType: file.type,
 
-                    mimeType: file.type,
+                base64: base64Data
+            });
 
-                    base64: base64Data
-                });
-
-            console.log(
-                "Drive Upload Result:",
-                uploadResponse
-            );
-        }
+        console.log(
+            "Drive Upload Result:",
+            uploadResponse
+        );
 
         
+        /* Store File Data */
         uploadedFilesData[config.inputId].push({
 
             fileName: file.name,
@@ -182,8 +182,13 @@ async function handleFilePreview(config) {
 
             mimeType: file.type,
 
-            base64: base64Data
+            fileId:
+                uploadResponse?.fileId || null,
+
+            fileUrl:
+                uploadResponse?.fileUrl || null
         });
+
 
         const fileCard =
             document.createElement("div");
@@ -289,6 +294,7 @@ async function handleFilePreview(config) {
 
     input.files = dt.files;
 
+    console.log(uploadedFilesData);
 }
 
 /* Format File Size */
