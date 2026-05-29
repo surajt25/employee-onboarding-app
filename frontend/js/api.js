@@ -38,3 +38,52 @@ async function testBackendConnection() {
         );
     }
 }
+
+
+/* Upload File To Drive */
+async function uploadFileToDrive(fileData) {
+
+    try {
+        const response =
+            await fetch(API_URL, {
+
+                method: "POST",
+
+                body: JSON.stringify({
+
+                    action: "uploadFile",
+
+                    fileName: fileData.fileName,
+
+                    mimeType: fileData.mimeType,
+
+                    base64: fileData.base64
+                })
+
+            });
+
+        const data =
+            await response.json();
+
+        console.log(
+            "Upload Response:",
+            data
+        );
+
+        return data;
+
+    } catch (error) {
+
+        console.error(
+            "File Upload Error:",
+            error
+        );
+
+        return {
+
+            success: false,
+
+            error: error.toString()
+        };
+    }
+}

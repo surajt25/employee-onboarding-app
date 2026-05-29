@@ -76,16 +76,22 @@ const uploadInputs = [
 
 ];
 
-
 /* Initialize Uploads */
-uploadInputs.forEach((config) => {
+document.addEventListener("DOMContentLoaded", () => {
 
-    const input =
-        document.getElementById(config.inputId);
+    uploadInputs.forEach((config) => {
 
-    input.addEventListener("change", () => {
+        const input =
+            document.getElementById(config.inputId);
 
-        handleFilePreview(config);
+        if (input) {
+
+            input.addEventListener("change", () => {
+
+                handleFilePreview(config);
+
+            });
+        }
 
     });
 
@@ -148,13 +154,26 @@ async function handleFilePreview(config) {
         /* Store Valid File */
         validFiles.push(file);
 
+        /* Upload Address Proof To Drive */
+        if (config.inputId === "addressProof") {
 
-        /* Store File Data */
-        if (!uploadedFilesData[config.inputId]) {
+            const uploadResponse =
+                await uploadFileToDrive({
 
-            uploadedFilesData[config.inputId] = [];
+                    fileName: file.name,
+
+                    mimeType: file.type,
+
+                    base64: base64Data
+                });
+
+            console.log(
+                "Drive Upload Result:",
+                uploadResponse
+            );
         }
 
+        
         uploadedFilesData[config.inputId].push({
 
             fileName: file.name,
@@ -270,9 +289,6 @@ async function handleFilePreview(config) {
 
     input.files = dt.files;
 
-    /* Temp Debug */
-    console.log(uploadedFilesData);
-
 }
 
 /* Format File Size */
@@ -287,7 +303,6 @@ function formatFileSize(bytes) {
         return `${mb.toFixed(2)} MB`;
 
     }
-
     return `${kb.toFixed(2)} KB`;
 }
 
