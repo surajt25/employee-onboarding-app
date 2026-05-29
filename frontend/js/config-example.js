@@ -1,0 +1,2 @@
+/* Backend API URL */
+const API_URL = "PASTE_YOUR_BACKEND_URL_HERE";
