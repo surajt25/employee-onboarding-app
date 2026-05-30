@@ -87,3 +87,48 @@ async function uploadFileToDrive(fileData) {
         };
     }
 }
+
+
+/* Submit Employee Form */
+async function submitEmployeeForm(formData) {
+
+    try {
+
+        const response =
+            await fetch(API_URL, {
+
+                method: "POST",
+
+                body: JSON.stringify({
+
+                    action: "submitEmployeeForm",
+
+                    formData: formData
+                })
+            });
+
+        const data =
+            await response.json();
+
+        console.log(
+            "Form Submission Response:",
+            data
+        );
+
+        return data;
+
+    } catch (error) {
+
+        console.error(
+            "Form Submission Error:",
+            error
+        );
+
+        return {
+
+            success: false,
+
+            error: error.toString()
+        };
+    }
+}
