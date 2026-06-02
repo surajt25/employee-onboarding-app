@@ -154,24 +154,6 @@ async function handleFilePreview(config) {
         /* Store Valid File */
         validFiles.push(file);
 
-        let uploadResponse = null;
-
-        /* Upload Address Proof To Drive */
-        uploadResponse =
-            await uploadFileToDrive({
-
-                fileName: file.name,
-
-                mimeType: file.type,
-
-                base64: base64Data
-            });
-
-        console.log(
-            "Drive Upload Result:",
-            uploadResponse
-        );
-
         
         /* Store File Data */
         uploadedFilesData[config.inputId].push({
@@ -182,11 +164,7 @@ async function handleFilePreview(config) {
 
             mimeType: file.type,
 
-            fileId:
-                uploadResponse?.fileId || null,
-
-            fileUrl:
-                uploadResponse?.fileUrl || null
+            base64: base64Data
         });
 
 
